@@ -86,3 +86,10 @@ _delta_log/
 
 # OS
 Thumbs.db
+
+# START Ruler Generated Files
+/AGENTS.md
+/AGENTS.md.bak
+/CLAUDE.md
+/CLAUDE.md.bak
+# END Ruler Generated Files

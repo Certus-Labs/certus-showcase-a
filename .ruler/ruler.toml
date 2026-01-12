@@ -1,0 +1,5 @@
+# Ruler Configuration - Only Cursor and Claude
+# See https://ai.intellectronica.net/ruler
+
+# Only enable Cursor and Claude agents
+default_agents = ["cursor", "claude"]

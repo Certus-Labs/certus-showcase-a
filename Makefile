@@ -1,4 +1,4 @@
-.PHONY: help install dev lint format test clean
+.PHONY: help install dev lint format test clean ruler repo-init-commons
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -46,3 +46,18 @@ clean: ## Clean up cache and temporary files
 
 clean-all: clean ## Clean everything including virtual environment
 	rm -rf .venv/
+
+# --- Commons from .github ---
+ruler: ## Generate AI rules from .ruler/
+	npx --yes @intellectronica/ruler apply
+
+repo-init-commons: ## Initialize/update configs and AI rules from .github
+	@if [ -d "../.github" ]; then \
+		../.github/scripts/sync-configs.sh . --force; \
+		../.github/scripts/sync-ruler.sh . --force; \
+		$(MAKE) ruler; \
+	else \
+		echo "Error: .github repo not found at ../.github"; \
+		exit 1; \
+	fi
+# --- End Commons ---
