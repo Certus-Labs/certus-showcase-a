@@ -14,6 +14,9 @@ dependencies = [
     "pydantic-settings>=2.0.0",
     "httpx>=0.27.0",
     "python-dotenv>=1.0.0",
+    "requests",
+    "pandas",
+    "pyarrow",
 ]
 
 [project.optional-dependencies]
